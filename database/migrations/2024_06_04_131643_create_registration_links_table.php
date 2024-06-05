@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('registration_links', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users'); // actually could be without user_id
             $table->string('unique_link')->unique();
             $table->timestamp('expires_at');
             $table->timestamps();
